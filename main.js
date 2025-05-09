@@ -4,11 +4,11 @@ const { getOpenAIExplanation } = require('./src/openaiService');
 
 async function main() {
     try {
-        console.log("📌 Fetching database structure...");
+        console.log("🔄 Fetching database structure...");
         const databaseStructure = await getDatabaseStructure();
 
         const prompt = `Buatkan query relasi sebanyak 50 dengan keterangan singkat berdasarkan data berikut:\n${JSON.stringify(databaseStructure, null, 2)}`;
-        console.log("📌 Sending request to OpenAI...");
+        console.log("🔄 Sending request to OpenAI...");
 
         const explanation = await getOpenAIExplanation(prompt);
         console.log("\n📌 OpenAI Explanation:\n", explanation);
